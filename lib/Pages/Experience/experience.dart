@@ -94,9 +94,7 @@ class PaintWidget extends CustomPainter {
       ..color = Theme.of(context).textTheme.bodyLarge!.color!
       ..strokeWidth = 1
       ..strokeCap = StrokeCap.butt
-      ..style = PaintingStyle.fill
-      ..
-      ;
+      ..style = PaintingStyle.fill;
 
     profile.forEach((element) {
       canva.drawLine(Offset(ox, oy),
