@@ -6,13 +6,13 @@ class ThemeM extends ChangeNotifier {
 
   void setDarkMode() {
     theme = Brightness.dark;
-    print("Current Theme:Dark");
+
     notifyListeners();
   }
 
   void setLightMode() {
     theme = Brightness.light;
-    print("Current Theme:Light");
+
     notifyListeners();
   }
 

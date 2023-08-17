@@ -8,11 +8,8 @@ class SideNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          border: Border.all(
-              color: Theme.of(context).textTheme.bodySmall!.color!, width: 2.0),
-          borderRadius: BorderRadius.circular(10)),
+    return Card(
+      elevation: 3,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -22,7 +19,7 @@ class SideNavBar extends StatelessWidget {
               image: AssetImage("assets/image/profile.jpg"),
             ),
           ),
-          const Text("Himanshu Sharma"),
+          Text("Himanshu Sharma", style: Theme.of(context).textTheme.bodyLarge),
           TextButton.icon(
             icon: Icon(Icons.mail),
             label: Text(

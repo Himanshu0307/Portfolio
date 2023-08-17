@@ -16,58 +16,62 @@ class Information extends StatelessWidget {
     PageController controller = PageController();
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            TextButton(
-                onPressed: () => {
-                      controller.animateToPage(0,
-                          duration: const Duration(milliseconds: 500),
-                          curve: Curves.easeIn)
-                    },
-                child: const Text("About")),
-            TextButton(
-                onPressed: () => {
-                      controller.animateToPage(1,
-                          duration: const Duration(milliseconds: 500),
-                          curve: Curves.easeIn)
-                    },
-                child: const Text("Experience")),
-            TextButton(
-                onPressed: () => {
-                      controller.animateToPage(2,
-                          duration: const Duration(milliseconds: 500),
-                          curve: Curves.easeIn)
-                    },
-                child: const Text("Projects")),
-            TextButton(
-                onPressed: () => {
-                      controller.animateToPage(3,
-                          duration: const Duration(milliseconds: 500),
-                          curve: Curves.easeIn)
-                    },
-                child: const Text("Connect")),
-            Consumer<ThemeM>(builder: (context, provider, _) {
-              return Switch(
-                value: provider.currentTheme() == ThemeMode.dark,
-                onChanged: (isD) {
-                  if (isD == true) {
-                    provider.setDarkMode();
-                  } else {
-                    provider.setLightMode();
-                  }
-                },
-              );
-            })
-          ],
+        Card(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              TextButton(
+                  onPressed: () => {
+                        controller.animateToPage(0,
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeIn)
+                      },
+                  child: const Text("About")),
+              TextButton(
+                  onPressed: () => {
+                        controller.animateToPage(1,
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeIn)
+                      },
+                  child: const Text("Experience")),
+              TextButton(
+                  onPressed: () => {
+                        controller.animateToPage(2,
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeIn)
+                      },
+                  child: const Text("Projects")),
+              TextButton(
+                  onPressed: () => {
+                        controller.animateToPage(3,
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeIn)
+                      },
+                  child: const Text("Connect")),
+              Consumer<ThemeM>(builder: (context, provider, _) {
+                return Switch(
+                  value: provider.currentTheme() == ThemeMode.dark,
+                  onChanged: (isD) {
+                    if (isD == true) {
+                      provider.setDarkMode();
+                    } else {
+                      provider.setLightMode();
+                    }
+                  },
+                );
+              })
+            ],
+          ),
         ),
-        SizedBox(
-          width: size.width * 0.6,
-          height: size.height * 0.8,
-          child: PageView(
-            scrollDirection: Axis.vertical,
-            controller: controller,
-            children: [const About(), Experience(), Projects(), Connect()],
+        Card(
+          child: SizedBox(
+            width: size.width * 0.6,
+            height: size.height * 0.8,
+            child: PageView(
+              scrollDirection: Axis.vertical,
+              controller: controller,
+              children: [const About(), Experience(), Projects(), Connect()],
+            ),
           ),
         )
       ],

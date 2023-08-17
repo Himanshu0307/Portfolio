@@ -1,9 +1,32 @@
 import 'package:flutter/material.dart';
 
-class About extends StatelessWidget {
+class About extends StatefulWidget {
   const About({super.key});
-  static const String about =
-      "Absolutely, Himanshu Sharma. Here's an introduction line for your resume portfolio.Dedicated and driven professional with a passion for your profession or field, Himanshu Sharma combines mention a standout skill or characteristic, e.g., 'innovative problem-solving' or 'proven leadership abilities' to achieve impactful results. With a strong foundation in mention relevant expertise or education, I am committed to briefly state your career objective or mission, e.g., 'driving innovation in the tech industry' or 'delivering exceptional client experiences'. My journey is defined by continuous learning and a relentless pursuit of excellence";
+  static const String about = "I'm Himanshu, \n a UI/UX designer \n a Techie ";
+
+  @override
+  State<About> createState() => _AboutState();
+}
+
+class _AboutState extends State<About> with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+  late Animation<double> animation;
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 2),
+    );
+    animation = Tween<double>(begin: 0.0, end: 1.0).animate(controller);
+    controller.forward();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,24 +37,33 @@ class About extends StatelessWidget {
         SizedBox(
           width: size.width * 0.5,
           height: size.height * 0.8,
-          child: const Stack(
+          child: Stack(
             children: [
-              Column(
-                children: [
-                  Text(
-                    "ABOUT",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 90,
-                    ),
+              SizedBox(
+                width: size.width * 0.5,
+                height: size.height * 0.8,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Hello!",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 70,
+                        ),
+                      ),
+                      Text(
+                        About.about,
+                        textAlign: TextAlign.center,
+                        softWrap: true,
+                      )
+                    ],
                   ),
-                  Text(
-                    about,
-                    textAlign: TextAlign.justify,
-                    softWrap: true,
-                  )
-                ],
+                ),
               )
             ],
           ),

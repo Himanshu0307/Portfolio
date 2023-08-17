@@ -66,8 +66,8 @@ flutter:
   assets:
     - assets\image\profile.jpg
     # asset for project
-    - assets\image\csharp.png
-    - assets\image\flask.png
+    - assets\image\bg1.jpg
+    - assets\image\light1.jpg
     - assets\image\flutter.png
     - assets\image\ftp.png
     - assets\image\mqtt.png
