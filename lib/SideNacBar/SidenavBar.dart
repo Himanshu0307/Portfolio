@@ -19,18 +19,23 @@ class SideNavBar extends StatelessWidget {
               image: AssetImage("assets/image/profile.jpg"),
             ),
           ),
-          Text("Himanshu Sharma", style: Theme.of(context).textTheme.bodyLarge),
+          Text("Himanshu Sharma",
+              style: Theme.of(context).textTheme.displaySmall),
           TextButton.icon(
             icon: Icon(Icons.mail),
             label: Text(
               "sharmaHimanshu030700@gmail.com",
+              style: Theme.of(context).textTheme.labelMedium,
               softWrap: false,
             ),
             onPressed: null,
           ),
           TextButton.icon(
             icon: Icon(Icons.call),
-            label: Text("+91-8003412098"),
+            label: Text(
+              "+91-8003412098",
+              style: Theme.of(context).textTheme.labelMedium,
+            ),
             onPressed: null,
           ),
           ButtonBar(
@@ -54,10 +59,10 @@ class SideNavBar extends StatelessWidget {
                   icon: FaIcon(FontAwesomeIcons.instagram)),
               IconButton(
                   onPressed: () {
-                    // launchUrl(Uri.parse("https://wa.me/918003412098"));
+                    launchUrl(Uri.parse("https://wa.me/918003412098"));
                   },
                   icon: FaIcon(FontAwesomeIcons.whatsapp)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.download)),
+              // IconButton(onPressed: () {}, icon: Icon(Icons.download)),
             ],
           )
         ],

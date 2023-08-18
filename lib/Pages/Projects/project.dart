@@ -61,6 +61,8 @@ class _ProjectsState extends State<Projects>
           Expanded(
               flex: 1,
               child: NavigationRail(
+                elevation: 3,
+                backgroundColor: Theme.of(context).cardTheme.color,
                 groupAlignment: 0,
                 labelType: NavigationRailLabelType.selected,
                 destinations: [
@@ -81,46 +83,49 @@ class _ProjectsState extends State<Projects>
               )),
           Expanded(
             flex: 4,
-            child: TabBarView(controller: controller, children: [
-              ...projects.map((e) {
-                return Row(
-                  children: [
-                    SizedBox(
-                      width: size.width * 0.38,
-                      height: size.height * 0.8,
-                      child: Stack(
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                e.name,
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 50,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: TabBarView(controller: controller, children: [
+                ...projects.map((e) {
+                  return Row(
+                    children: [
+                      SizedBox(
+                        width: size.width * 0.38,
+                        height: size.height * 0.8,
+                        child: Stack(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  e.name,
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 50,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                e.time,
-                                textAlign: TextAlign.start,
-                                softWrap: true,
-                              ),
-                              Text(
-                                e.description,
-                                textAlign: TextAlign.justify,
-                                softWrap: true,
-                              ),
-                              Text("Tech & Tools: ${e.tech.toString()}")
-                            ],
-                          )
-                        ],
-                      ),
-                    )
-                  ],
-                );
-              }).toList()
-            ]),
+                                Text(
+                                  e.time,
+                                  textAlign: TextAlign.start,
+                                  softWrap: true,
+                                ),
+                                Text(
+                                  e.description,
+                                  textAlign: TextAlign.justify,
+                                  softWrap: true,
+                                ),
+                                Text("Tech & Tools: ${e.tech.toString()}")
+                              ],
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  );
+                }).toList()
+              ]),
+            ),
           )
         ],
       ),

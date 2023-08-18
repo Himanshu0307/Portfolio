@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/Pages/Projects/project.dart';
 import 'package:portfolio/Pages/Connect/connect.dart';
 import 'package:portfolio/Pages/Experience/experience.dart';
+import 'package:portfolio/Pages/Skills/Skills.dart';
 import 'package:portfolio/_models/ThemeM.dart';
 import 'package:provider/provider.dart';
 
@@ -20,30 +21,37 @@ class Information extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              TextButton(
+              ElevatedButton(
                   onPressed: () => {
                         controller.animateToPage(0,
                             duration: const Duration(milliseconds: 500),
                             curve: Curves.easeIn)
                       },
                   child: const Text("About")),
-              TextButton(
+              ElevatedButton(
                   onPressed: () => {
                         controller.animateToPage(1,
                             duration: const Duration(milliseconds: 500),
                             curve: Curves.easeIn)
                       },
-                  child: const Text("Experience")),
-              TextButton(
+                  child: const Text("Skills")),
+              ElevatedButton(
                   onPressed: () => {
                         controller.animateToPage(2,
                             duration: const Duration(milliseconds: 500),
                             curve: Curves.easeIn)
                       },
-                  child: const Text("Projects")),
-              TextButton(
+                  child: const Text("Throwback")),
+              ElevatedButton(
                   onPressed: () => {
                         controller.animateToPage(3,
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeIn)
+                      },
+                  child: const Text("Projects")),
+              ElevatedButton(
+                  onPressed: () => {
+                        controller.animateToPage(4,
                             duration: const Duration(milliseconds: 500),
                             curve: Curves.easeIn)
                       },
@@ -65,12 +73,17 @@ class Information extends StatelessWidget {
         ),
         Card(
           child: SizedBox(
-            width: size.width * 0.6,
-            height: size.height * 0.8,
+            height: size.height * 0.89,
             child: PageView(
               scrollDirection: Axis.vertical,
               controller: controller,
-              children: [const About(), Experience(), Projects(), Connect()],
+              children: [
+                const About(),
+                const Skills(),
+                Experience(),
+                Projects(),
+                Connect()
+              ],
             ),
           ),
         )

@@ -41,65 +41,68 @@ class _ConnectState extends State<Connect> {
       width: size.width * 0.3,
       child: Form(
         key: keyform,
-        child: Column(
-          children: [
-            TextFormField(
-              controller: name,
-              autofocus: true,
-              validator: (value) {
-                if (value == null || value.isEmpty) return "Required";
-                return null;
-              },
-              decoration: const InputDecoration(
-                  hintText: "Please Enter User Name", labelText: "User Name"),
-            ),
-            TextFormField(
-              validator: (value) {
-                if (value == null || value.isEmpty) return "Required";
-                return null;
-              },
-              decoration: const InputDecoration(
-                  hintText: "Please Enter Email Address",
-                  labelText: "Email Address"),
-            ),
-            TextFormField(
-              controller: purpose,
-              validator: (value) {
-                if (value == null || value.isEmpty) return "Required";
-                return null;
-              },
-              decoration: const InputDecoration(
-                  hintText: "Please Provide Subject", labelText: "Subject"),
-            ),
-            TextFormField(
-              controller: description,
-              validator: (value) {
-                if (value == null || value.isEmpty) return "Required";
-                return null;
-              },
-              maxLines: 6,
-              minLines: 1,
-              decoration: const InputDecoration(
-                  hintText: "Please Enter your query",
-                  labelText: "Description"),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  if (keyform.currentState!.validate()) {
-                    var url =
-                        "mailto:himanshusharma.cse23@jecrc.ac.in?subject=${purpose.text}&body=Name:${name.text}Description:${description.text}";
-                    launchUrl(Uri.parse(url));
-                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text(
-                            "Thanks for contacting. User will soon reply through Mail")));
-                  }
+        child: Padding(
+          padding: const EdgeInsets.only(left: 8.0),
+          child: Column(
+            children: [
+              TextFormField(
+                controller: name,
+                autofocus: true,
+                validator: (value) {
+                  if (value == null || value.isEmpty) return "Required";
+                  return null;
                 },
-                child: const Text("Submit"),
+                decoration: const InputDecoration(
+                    hintText: "Please Enter User Name", labelText: "User Name"),
               ),
-            )
-          ],
+              TextFormField(
+                validator: (value) {
+                  if (value == null || value.isEmpty) return "Required";
+                  return null;
+                },
+                decoration: const InputDecoration(
+                    hintText: "Please Enter Email Address",
+                    labelText: "Email Address"),
+              ),
+              TextFormField(
+                controller: purpose,
+                validator: (value) {
+                  if (value == null || value.isEmpty) return "Required";
+                  return null;
+                },
+                decoration: const InputDecoration(
+                    hintText: "Please Provide Subject", labelText: "Subject"),
+              ),
+              TextFormField(
+                controller: description,
+                validator: (value) {
+                  if (value == null || value.isEmpty) return "Required";
+                  return null;
+                },
+                maxLines: 6,
+                minLines: 1,
+                decoration: const InputDecoration(
+                    hintText: "Please Enter your query",
+                    labelText: "Description"),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    if (keyform.currentState!.validate()) {
+                      var url =
+                          "mailto:himanshusharma.cse23@jecrc.ac.in?subject=${purpose.text}&body=Name:${name.text}Description:${description.text}";
+                      launchUrl(Uri.parse(url));
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          content: Text(
+                              "Thanks for contacting. User will soon reply through Mail")));
+                    }
+                  },
+                  child: const Text("Submit"),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -50,7 +50,7 @@ class Experience extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    "Experience",
+                    "Major Throwbacks",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -82,13 +82,13 @@ class PaintWidget extends CustomPainter {
   final List<ExperienceDetail> profile;
   BuildContext context;
   PaintWidget(this.profile, this.context);
-  var ox = 3.0;
+  var ox = 20.0;
   var oy = 3.0;
   @override
   void paint(Canvas canva, Size size) {
     canva.drawColor(Theme.of(context).colorScheme.background, BlendMode.dst);
 
-    var style = TextStyle(color: Theme.of(context).textTheme.bodyLarge!.color!);
+    var style = Theme.of(context).textTheme.bodyMedium!;
     var totalheight = size.height;
     var paint = Paint()
       ..color = Theme.of(context).textTheme.bodyLarge!.color!

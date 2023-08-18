@@ -25,7 +25,7 @@ class MainPage extends StatelessWidget {
             );
           }),
           Padding(
-            padding: const EdgeInsets.only(left: 80),
+            padding: const EdgeInsets.only(left: 10),
             child: Row(
               // crossAxisAlignment: CrossAxisAlignment,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -33,9 +33,8 @@ class MainPage extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Container(
-                    height: size.height * 0.8,
                     width: size.width * 0.3,
-                    margin: const EdgeInsets.only(top: 20),
+                    margin: const EdgeInsets.only(top: 20, bottom: 30),
                     child: const SideNavBar(),
                   ),
                 ),
