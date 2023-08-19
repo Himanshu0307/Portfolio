@@ -52,10 +52,7 @@ class Experience extends StatelessWidget {
                   Text(
                     "Major Throwbacks",
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 90,
-                    ),
+                    style: Theme.of(context).textTheme.displayMedium!,
                   ),
                   Consumer<ThemeM>(builder: (context, provider, child) {
                     return CustomPaint(

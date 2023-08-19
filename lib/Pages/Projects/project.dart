@@ -22,7 +22,7 @@ class _ProjectsState extends State<Projects>
     Project(
       name: "Backup Service",
       description:
-          " a Windows Service application that automates the backup process by scheduling regular backups and transferring them to a target server using FTP. This solution enhances data security and efficiency by eliminating manual intervention and ensuring timely backups.",
+          "A Windows Service application that automates the backup process by scheduling regular backups and transferring them to a target server using FTP. This solution enhances data security and efficiency by eliminating manual intervention and ensuring timely backups.",
       icon: FaIcon(FontAwesomeIcons.computer),
       tech: ["C#", "FTP Service"],
       time: "01/2023 - 02/2023",
@@ -34,6 +34,26 @@ class _ProjectsState extends State<Projects>
         icon: FaIcon(FontAwesomeIcons.wifi),
         time: "01/2023 - 02/2023",
         tech: ["Flask", "NodeMCU", "MQTT Protocol"]),
+    Project(
+        name: "Maze Solver",
+        description:
+            "A Bot that perform dry run and automatically find shortest path in a Maze",
+        icon: FaIcon(FontAwesomeIcons.carOn),
+        time: "2019-Tech Fest",
+        tech: [
+          "Arduino",
+          "L298N Motor Driver",
+          "IR sensors",
+          "Left Hand Algorithm",
+          "Right Hand Algorithm"
+        ]),
+    Project(
+        name: "MAC Utility for Web",
+        description:
+            "A robust MAC-based security utility for web applications that enhances data protection and access control. User can set MAC(Media Access Control) based restriction in the web Application and filter the Access Control as per MAC Address",
+        icon: FaIcon(FontAwesomeIcons.idBadge),
+        time: "06/2023",
+        tech: ["C#", "Window Service"]),
   ];
 
   int index = 0;

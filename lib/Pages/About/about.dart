@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class About extends StatefulWidget {
   const About({super.key});
   static const String about =
-      "I'm Himanshu, \n a Full Stack Designer \n a Techie ";
+      "I'm Himanshu, \n  Full Stack Designer \n a Techie ";
 
   @override
   State<About> createState() => _AboutState();

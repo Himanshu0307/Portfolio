@@ -42,7 +42,8 @@ class _ConnectState extends State<Connect> {
       child: Form(
         key: keyform,
         child: Padding(
-          padding: const EdgeInsets.only(left: 8.0),
+          padding:
+              EdgeInsets.only(left: size.width * 0.2, right: size.width * 0.2),
           child: Column(
             children: [
               TextFormField(
@@ -98,7 +99,7 @@ class _ConnectState extends State<Connect> {
                               "Thanks for contacting. User will soon reply through Mail")));
                     }
                   },
-                  child: const Text("Submit"),
+                  child: const Text("Let's Talk"),
                 ),
               )
             ],

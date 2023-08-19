@@ -27,8 +27,10 @@ class MyApp extends StatelessWidget {
                     labelSmall: TextStyle(color: Colors.white70),
                     displayLarge: TextStyle(
                         color: Colors.black87, fontWeight: FontWeight.bold),
-                    displaySmall: TextStyle(
+                    displayMedium: TextStyle(
                         color: Colors.black87, fontWeight: FontWeight.bold),
+                    displaySmall: TextStyle(
+                        color: Colors.black54, fontWeight: FontWeight.bold),
                     bodyLarge: TextStyle(
                         color: Colors.black, fontWeight: FontWeight.bold),
                     bodyMedium: TextStyle(
@@ -46,6 +48,8 @@ class MyApp extends StatelessWidget {
                     labelLarge: TextStyle(color: Colors.white70),
                     labelMedium: TextStyle(color: Colors.white70),
                     labelSmall: TextStyle(color: Colors.white70),
+                    displayMedium: TextStyle(
+                        color: Colors.white70, fontWeight: FontWeight.bold),
                     displaySmall: TextStyle(
                         color: Colors.white70, fontWeight: FontWeight.bold),
                     displayLarge: TextStyle(
@@ -54,7 +58,7 @@ class MyApp extends StatelessWidget {
                         color: Colors.white, fontWeight: FontWeight.bold),
                     bodyMedium: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold)),
-                colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+                colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
                 cardTheme: CardTheme(
                     color: Colors.black54, surfaceTintColor: Colors.grey)),
             // theme: ThemeData.dark(useMaterial3: true),

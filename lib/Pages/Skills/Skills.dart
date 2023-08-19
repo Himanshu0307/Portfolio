@@ -13,14 +13,32 @@ class Skills extends StatefulWidget {
 class _SkillsState extends State<Skills> with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> animation;
-  var skills = [
-    Icon(FlutterDEVICON.csharp_line),
-    Icon(FlutterDEVICON.django_line),
-    Icon(FlutterDEVICON.flutter_plain),
-    Icon(FlutterDEVICON.python_plain),
-    Icon(FlutterDEVICON.dot_net_plain),
-    Icon(FlutterDEVICON.angularjs_plain),
-    Icon(FlutterDEVICON.git_plain),
+  var skills = const [
+    Icon(
+      FlutterDEVICON.csharp_line,
+      size: 100.0,
+    ),
+    // Icon(
+    //   FlutterDEVICON.django_line,
+    //   size: 100.0,
+    // ),
+    Icon(
+      FlutterDEVICON.flutter_plain,
+      size: 100.0,
+    ),
+    Icon(
+      FlutterDEVICON.python_plain,
+      size: 100.0,
+    ),
+
+    Icon(
+      FlutterDEVICON.angularjs_plain,
+      size: 100.0,
+    ),
+    Icon(
+      FlutterDEVICON.git_plain,
+      size: 100.0,
+    ),
   ];
   @override
   void initState() {
@@ -59,27 +77,23 @@ class _SkillsState extends State<Skills> with SingleTickerProviderStateMixin {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // Row(
-                      //   children: [
-                      //     Icon(FlutterDEVICON.csharp_line),
-                      //     Icon(FlutterDEVICON.flutter_plain),
-                      //     Icon(FlutterDEVICON.angularjs_plain),
-                      //     Icon(FlutterDEVICON.python_plain),
-                      //     Icon(FlutterDEVICON.django_line),
-
-                      //   ],
-                      // )
-                      Expanded(
-                        flex: 1,
-                        child: GridView.builder(
-                            itemCount: skills.length,
-                            gridDelegate:
-                                SliverGridDelegateWithMaxCrossAxisExtent(
-                                    maxCrossAxisExtent:
-                                        skills.length.toDouble()),
-                            itemBuilder: (con, index) {
-                              return skills[index];
-                            }),
+                      Center(
+                        child: SizedBox(
+                          height: size.height * 0.3,
+                          width: size.width * 0.5,
+                          child: GridView.builder(
+                              itemCount: skills.length,
+                              gridDelegate:
+                                  SliverGridDelegateWithMaxCrossAxisExtent(
+                                      crossAxisSpacing: 30,
+                                      mainAxisSpacing: 30,
+                                      maxCrossAxisExtent: size.width *
+                                          0.5 /
+                                          (skills.length + 1)),
+                              itemBuilder: (con, index) {
+                                return skills[index];
+                              }),
+                        ),
                       )
                     ],
                   ),

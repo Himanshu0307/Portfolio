@@ -73,7 +73,7 @@ class Information extends StatelessWidget {
         ),
         Card(
           child: SizedBox(
-            height: size.height * 0.89,
+            height: size.height * 0.85,
             child: PageView(
               scrollDirection: Axis.vertical,
               controller: controller,
