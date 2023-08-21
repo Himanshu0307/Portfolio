@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/Information/information.dart';
+import 'package:portfolio/Laptop/Information/information.dart';
 import 'package:portfolio/_models/ThemeM.dart';
 import 'package:provider/provider.dart';
 

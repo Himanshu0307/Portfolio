@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/_models/ThemeM.dart';
 import 'package:provider/provider.dart';
 
-import '../../_models/Experience.dart';
+import '../../../_models/Experience.dart';
 
 class Experience extends StatelessWidget {
   Experience({super.key});

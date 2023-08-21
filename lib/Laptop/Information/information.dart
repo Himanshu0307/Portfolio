@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/Pages/Projects/project.dart';
-import 'package:portfolio/Pages/Connect/connect.dart';
-import 'package:portfolio/Pages/Experience/experience.dart';
-import 'package:portfolio/Pages/Skills/Skills.dart';
+import 'package:portfolio/Laptop/Pages/Projects/project.dart';
+import 'package:portfolio/Laptop/Pages/Connect/connect.dart';
+import 'package:portfolio/Laptop/Pages/Experience/experience.dart';
+import 'package:portfolio/Laptop/Pages/Skills/Skills.dart';
 import 'package:portfolio/_models/ThemeM.dart';
 import 'package:provider/provider.dart';
 
