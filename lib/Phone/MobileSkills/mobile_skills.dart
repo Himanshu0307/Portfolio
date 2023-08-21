@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/_models/Skills.dart';
 
-class MObileSkills extends StatelessWidget {
+class MObileSkills extends StatefulWidget {
   MObileSkills({super.key});
+
+  @override
+  State<MObileSkills> createState() => _MObileSkillsState();
+}
+
+class _MObileSkillsState extends State<MObileSkills> {
   final List<SkillsModel> skill = [
     SkillsModel(title: "Flutter", progress: 0.8),
     SkillsModel(title: "HTML & CSS", progress: 0.7),
