@@ -54,13 +54,13 @@ class MyApp extends StatelessWidget {
       cardTheme:
           CardTheme(color: Colors.black54, surfaceTintColor: Colors.grey));
   ThemeData mobileDark = ThemeData.dark(useMaterial3: true).copyWith(
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.black87,
+          foregroundColor: Colors.orangeAccent.shade400),
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: Colors.orangeAccent.shade400,
         // circularTrackColor: Colors.orangeAccent.shade400
       ),
-      // buttonTheme: ButtonThemeData(
-      // colorScheme: ColorScheme.fromSeed(seedColor: Colors.red)),
-      // colorScheme: ColorScheme.fromSeed(seedColor: Colors.redAccent.shade700),
       textTheme: TextTheme(
           labelLarge: TextStyle(color: Colors.orangeAccent.shade400),
           labelMedium: TextStyle(color: Colors.orangeAccent.shade400),
@@ -72,8 +72,8 @@ class MyApp extends StatelessWidget {
           displayLarge: TextStyle(
               color: Colors.orangeAccent.shade400, fontWeight: FontWeight.bold),
           bodyLarge: TextStyle(
-              fontFamily: "Pacifico-Regular",
-              color: Colors.orangeAccent.shade400,
+              // fontFamily: "Pacifico-Regular",
+              // color: Colors.orangeAccent.shade400,
               fontWeight: FontWeight.bold),
           bodySmall: TextStyle(
             color: Colors.white,

@@ -92,8 +92,8 @@ class PaintWidget extends CustomPainter {
         textAlign: TextAlign.justify,
       ))
         ..pushStyle(style.getTextStyle())
-        ..addText("${element.Company} (${element.Description})")
-        ..addText("\n${element.Time}");
+        ..addText("${element.Company} (${element.Description})");
+      // ..addText("\n${element.Time}");
       Paragraph para = builder.build();
       para.layout(ParagraphConstraints(width: size.width * 0.7));
       canva.drawParagraph(para, Offset(ox + 6, oy - 2));

@@ -9,17 +9,20 @@ class MobileAbout extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return SizedBox(
-      height: size.height * 0.5,
+      // height: size.height * 0.5,
       child: Row(
         children: [
           Expanded(
               flex: 1,
               child: Card(
-                elevation: 4,
-                child: Placeholder(),
+                child: Image.asset(
+                  "assets/image/image1.png",
+                  color: Colors.black87,
+                  colorBlendMode: BlendMode.color,
+                ),
               )),
           Expanded(
-              flex: 2,
+              flex: 1,
               child: Column(
                 children: [
                   Text("About",

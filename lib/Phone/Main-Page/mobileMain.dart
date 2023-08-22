@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/Phone/MobileAbout/mobileabout.dart';
 import 'package:portfolio/Phone/MobileSkills/mobile_skills.dart';
 import 'package:portfolio/Phone/MobileThrowBacks/mobile_Throw.dart';
-import 'package:portfolio/Phone/TopCard/topcard.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../_models/Quote.dart';
 import '../MobileProjects/mobileProject.dart';
@@ -24,13 +24,13 @@ class MobileMain extends StatelessWidget {
   //         },
   //         itemCount: widget.length,
   //       ),
-  void displayModalSheet(context, Size size) {
-    Scaffold.of(context).showBottomSheet((context) {
-      return Container(
-        height: 40,
-      );
-    });
-  }
+  final keyform = GlobalKey<FormState>();
+
+  late TextEditingController name = TextEditingController();
+
+  late TextEditingController purpose = TextEditingController();
+
+  late TextEditingController description = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +51,8 @@ class MobileMain extends StatelessWidget {
                 motivationalQuotes[inde]["quote"]! +
                     "\n-" +
                     motivationalQuotes[inde]["author"]!,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall!
-                    .merge(TextStyle(fontSize: 7)),
+                style: Theme.of(context).textTheme.bodySmall!.merge(
+                    TextStyle(fontSize: 7, fontFamily: "Pacifico-Regular")),
                 textAlign: TextAlign.end,
               ),
               stretchModes: [
@@ -78,11 +76,93 @@ class MobileMain extends StatelessWidget {
           )
         ],
       )),
-      floatingActionButton: ElevatedButton.icon(
-        icon: Icon(Icons.message),
-        label: Text(""),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.message),
         onPressed: () {
-          displayModalSheet(context, size);
+          showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return Container(
+                  padding: EdgeInsets.only(
+                      left: 7,
+                      right: 7,
+                      top: 3,
+                      bottom: MediaQuery.of(context).viewInsets.bottom),
+                  height: 400 + MediaQuery.of(context).viewInsets.bottom,
+                  child: Form(
+                    key: keyform,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            controller: name,
+                            autofocus: true,
+                            validator: (value) {
+                              if (value == null || value.isEmpty)
+                                return "Required";
+                              return null;
+                            },
+                            decoration: const InputDecoration(
+                                hintText: "Please Enter User Name",
+                                labelText: "User Name"),
+                          ),
+                          TextFormField(
+                            validator: (value) {
+                              if (value == null || value.isEmpty)
+                                return "Required";
+                              return null;
+                            },
+                            decoration: const InputDecoration(
+                                hintText: "Please Enter Email Address",
+                                labelText: "Email Address"),
+                          ),
+                          TextFormField(
+                            controller: purpose,
+                            validator: (value) {
+                              if (value == null || value.isEmpty)
+                                return "Required";
+                              return null;
+                            },
+                            decoration: const InputDecoration(
+                                hintText: "Please Provide Subject",
+                                labelText: "Subject"),
+                          ),
+                          TextFormField(
+                            controller: description,
+                            validator: (value) {
+                              if (value == null || value.isEmpty)
+                                return "Required";
+                              return null;
+                            },
+                            maxLines: 6,
+                            minLines: 1,
+                            decoration: const InputDecoration(
+                                hintText: "Please Enter your query",
+                                labelText: "Description"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                if (keyform.currentState!.validate()) {
+                                  var url =
+                                      "mailto:himanshusharma.cse23@jecrc.ac.in?subject=${purpose.text}&body=Name:${name.text} Description:${description.text}";
+                                  launchUrl(Uri.parse(url));
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                          content: Text(
+                                              "Thanks for contacting. User will soon reply through Mail")));
+                                }
+                              },
+                              child: const Text("Let's Talk"),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              });
         },
       ),
     );

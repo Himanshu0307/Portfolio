@@ -13,7 +13,11 @@ class _MObileSkillsState extends State<MObileSkills> {
     SkillsModel(title: "Flutter", progress: 0.8),
     SkillsModel(title: "HTML & CSS", progress: 0.7),
     SkillsModel(title: "Angular", progress: 0.7),
+    SkillsModel(title: "C#", progress: 0.65),
+    SkillsModel(title: "Java", progress: 0.65),
     SkillsModel(title: "Python", progress: 0.7),
+    SkillsModel(title: "SQL Server", progress: 0.5),
+    SkillsModel(title: "Arduino", progress: 0.5),
   ];
 
   @override

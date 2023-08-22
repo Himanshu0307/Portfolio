@@ -73,6 +73,7 @@ flutter:
     - assets\image\mobilelight.jpg
     - assets\image\mountain1.jpg
     - assets\image\mountain2.jpg
+    - assets\image\image1.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
