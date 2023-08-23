@@ -37,45 +37,45 @@ class MobileMain extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     int inde = Random().nextInt(50);
     return Scaffold(
-      body: FractionallySizedBox(
+      body: SizedBox(
+          height: size.height,
+          width: size.width,
           child: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            expandedHeight: size.height * 0.30,
-            collapsedHeight: 20,
-            toolbarHeight: 0,
-            stretch: true,
-            flexibleSpace: FlexibleSpaceBar(
-              centerTitle: true,
-              title: Text(
-                motivationalQuotes[inde]["quote"]! +
-                    "\n-" +
-                    motivationalQuotes[inde]["author"]!,
-                style: Theme.of(context).textTheme.bodySmall!.merge(
-                    TextStyle(fontSize: 7, fontFamily: "Pacifico-Regular")),
-                textAlign: TextAlign.end,
+            slivers: [
+              SliverAppBar(
+                expandedHeight: size.height * 0.30,
+                collapsedHeight: 20,
+                toolbarHeight: 0,
+                stretch: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  centerTitle: true,
+                  title: Text(
+                    motivationalQuotes[inde]["quote"]! +
+                        "\n-" +
+                        motivationalQuotes[inde]["author"]!,
+                    style: Theme.of(context).textTheme.bodySmall!.merge(
+                        TextStyle(fontSize: 7, fontFamily: "Pacifico-Regular")),
+                    textAlign: TextAlign.end,
+                  ),
+                  stretchModes: [
+                    // StretchMode.blurBackground,
+                    // StretchMode.zoomBackground,
+                    StretchMode.fadeTitle
+                  ],
+                  background: Image.asset(
+                    "assets/image/mountain2.jpg",
+                    // fit: BoxFit.fitHeight,
+                    color: Colors.blueGrey.shade600,
+                    colorBlendMode: BlendMode.color,
+                  ),
+                ),
               ),
-              stretchModes: [
-                // StretchMode.blurBackground,
-                // StretchMode.zoomBackground,
-                StretchMode.fadeTitle
-              ],
-              background: Image.asset(
-                "assets/image/mountain2.jpg",
-                // fit: BoxFit.fitHeight,
-                color: Colors.blueGrey.shade600,
-                colorBlendMode: BlendMode.color,
-              ),
-            ),
-          ),
-          SliverList.builder(
-            itemBuilder: (context, index) {
-              return widget[index];
-            },
-            itemCount: widget.length,
-          )
-        ],
-      )),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                    (context, index) => widget[index]),
+              )
+            ],
+          )),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.message),
         onPressed: () {
